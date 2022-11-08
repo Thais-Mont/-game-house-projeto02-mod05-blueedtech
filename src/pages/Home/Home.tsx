@@ -18,11 +18,8 @@ interface Game {
   title: string;
   bannerUrl: string;
   genero: string;
-  descricao?: string;
-  videoUrl?: string;
-  _count: {
-    ads: number;
-  };
+  descricao: string;
+  videoUrl: string;
 }
 
 export default function Home() {
@@ -45,6 +42,7 @@ export default function Home() {
       );
     });
   }, []);
+
 
   const editGame = (game: Game) => {
     setGameEdit(game);
@@ -73,7 +71,7 @@ export default function Home() {
 
             {favoritos.map((favorito) => {
               return (
-                <Favoritos key={favorito.id} game={favorito} onEdit={editGame} />
+                <Favoritos key={favorito.id} game={favorito}  />
               );
             })}
         </div>
